@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Train Activity</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!--link Bootstrap CSS file hrere and the  Bootstrap JS files towards the end of the file -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- Link CSS files -->
+	<link rel="stylesheet" href="./style.css">
+
+	<!-- Firebase access -->
+	<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+</head>
+<body>
+
+	<div class="jumbotron" id="jumbo-style" align="center">
+		<h1>Anytme is train time</h1>
+		<h4>Choo Choo. Chee Chee.</h4>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="panel-title">Current Train Schedule <i class="fa fa-table"></i></div>
+		</div>
+		<table class="table" id="train-table">
+			<thead>
+				<tr>
+					<th scope="col">Train Name <i class="fa fa-train" aria-hidden="true"></i></th>
+					<th scope="col">Destination</th>
+					<th scope="col">Frequency (min)</th>
+					<th scope="col">Next Arrival</th>
+					<th scope="col">Minutes Away</th>
+				</tr>
+			</thead>
+			<tbody id="table-body">
+				<!-- Dynamic table entries from firebase go here-->
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<div class="panel-title">Add Train</div>
+		</div>
+		<div class="panel-body">
+			<form role="form">
+				<div class="form-group">
+					<label for="train-name">Train Name <i class="fa fa-train" aria-hidden="true"></i></label>
+					<input type="text" class="form-control" id="train-name">
+				</div>
+				<div class="form-group">
+					<label for="destination">Destination</label>
+					<input type="text" class="form-control" id="destination">
+				</div>
+				<div class="form-group">
+					<label for="first-train-time">First Train Time (HH:MM military time)</label>
+					<input type="text" class="form-control" id="first-train-time">
+				</div>
+				<div class="form-group">
+					<label for="frequency">Frequency (min)</label>
+					<input type="text" class="form-control" id="frequency">
+				</div>
+				<button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Link in Bootstrap's Jquery -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+	<!-- Link in my Javascript -->
+	<script type="text/javascript" src="./time.js"></script>
+	<script type="text/javascript" src="./train.js"></script>
+</body>
+</html>
